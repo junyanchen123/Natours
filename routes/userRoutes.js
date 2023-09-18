@@ -26,12 +26,10 @@ router.delete('/deleteMe', userController.deleteMe);
 
 router.use(authController.restrictTo('admin'));
 
-router
-  .route('/')
-  .get(userController.getAllUsers);
-  // .post(userController.createUser);
-  
-  router.post('/signup', authController.signup);
+router.route('/').get(userController.getAllUsers);
+// .post(userController.createUser);
+
+router.post('/signup', authController.signup);
 
 router
   .route('/:id')
